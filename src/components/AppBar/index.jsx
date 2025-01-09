@@ -12,16 +12,20 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone'
 import Tooltip from '@mui/material/Tooltip'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import Profiles from './Menus/Profiles'
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd'
 
 const AppBar = () => {
   return (
     <Box
       sx={{
         width: '100%',
-        height: (theme) => theme.trello.BoardBarHeight,
+        height: (theme) => theme.trello.appBarHeight,
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        gap: 2,
+        px: 2,
+        overflowX: 'auto'
       }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: '2' }}>
         <AppIcon sx={{ color: 'primary.main' }} />
@@ -42,11 +46,15 @@ const AppBar = () => {
           </Typography>
         </Box>
         <Box>
-          <Workspaces />
-          <Recent />
-          <Starred />
-          <Templates />
-          <Button variant='outlined'>Create</Button>
+          <Box sx={{ dispay: { xs: 'none', md: 'flex' }, gap: 1 }}>
+            <Workspaces />
+            <Recent />
+            <Starred />
+            <Templates />
+            <Button variant='outlined' startIcon={<LibraryAddIcon />}>
+              Create
+            </Button>
+          </Box>
         </Box>
       </Box>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -55,6 +63,7 @@ const AppBar = () => {
           label='Search field'
           type='search'
           size='small'
+          sx={{ minWidth: '120px' }}
         />
         <ModeSelect />
         <Tooltip title='Notification'>
