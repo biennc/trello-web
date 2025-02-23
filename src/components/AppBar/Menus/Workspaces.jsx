@@ -11,6 +11,7 @@ import ContentCopy from '@mui/icons-material/ContentCopy'
 import ContentPaste from '@mui/icons-material/ContentPaste'
 import Cloud from '@mui/icons-material/Cloud'
 import { ExpandMore } from '@mui/icons-material'
+import { Box } from '@mui/material'
 
 const Workspaces = () => {
   const [anchorEl, setAnchorEl] = React.useState(null)
@@ -22,7 +23,7 @@ const Workspaces = () => {
     setAnchorEl(null)
   }
   return (
-    <>
+    <Box>
       <Button
         sx={{ color: 'white' }}
         id='basic-button-workspaces'
@@ -82,7 +83,7 @@ const Workspaces = () => {
           <ListItemText>Web Clipboard</ListItemText>
         </MenuItem>
       </Menu>
-    </>
+    </Box>
   )
 }
 

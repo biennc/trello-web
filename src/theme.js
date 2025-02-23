@@ -1,29 +1,20 @@
 import { experimental_extendTheme as extendTheme } from '@mui/material/styles'
 // import { cyan, deepOrange, orange, teal } from '@mui/material/colors'
-
+const APP_BAR_HEIGHT = 58
+const BOARD_BAR_HEIGHT = 60
+const BOARD_CONTENT = `calc(100vh - ${parseInt(APP_BAR_HEIGHT)}px - ${parseInt(
+  BOARD_BAR_HEIGHT
+)}px)`
 // Create a theme instance.
 const theme = extendTheme({
   trello: {
-    appBarHeight: '58px',
-    boardBarHeight: '60px'
+    appBarHeight: APP_BAR_HEIGHT,
+    boardBarHeight: BOARD_BAR_HEIGHT,
+    boardContentHeight: BOARD_CONTENT
   },
   colorSchemes: {
-    // light: {
-    //   palette: {
-    //     primary: {
-    //       main: teal[500],
-    //       secondary: deepOrange[500]
-    //     }
-    //   }
-    // },
-    // dark: {
-    //   palette: {
-    //     primary: {
-    //       main: cyan[500],
-    //       secondary: orange[500]
-    //     }
-    //   }
-    // }
+    light: {},
+    dark: {}
   },
   components: {
     // Name of the component
@@ -32,14 +23,14 @@ const theme = extendTheme({
         body: {
           '*::-webkit-scrollbar': {
             width: '8px',
-            Height: '8px'
+            height: '8px'
           },
           '*::-webkit-scrollbar-thumb': {
-            backgroundColor: '#bdc3c7',
+            backgroundColor: '#dcdde1',
             borderRadius: '8px'
           },
           '*::-webkit-scrollbar-thumb:hover': {
-            backgroundColor: '#00b894'
+            backgroundColor: 'white'
           }
         }
       }
@@ -57,17 +48,22 @@ const theme = extendTheme({
     },
     MuiInputLabel: {
       styleOverrides: {
-        // Name of the slot
-        root: ({ theme }) => ({
-          color: theme.palette.primary.main,
+        root: {
           fontSize: '0.875rem'
-        })
+        }
+      }
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          '&.MuiTypography-body1': { fontSize: '0.875rem' }
+        }
       }
     },
     MuiOutlinedInput: {
       styleOverrides: {
         // Name of the slot
-        root: ({ theme }) => ({
+        root: {
           // color: theme.palette.primary.main,
           fontSize: '0.875rem',
           // '.MuiOutlinedInput-notchedOutline': {
@@ -87,7 +83,7 @@ const theme = extendTheme({
           '&.Mui-focused fieldset': {
             borderWidth: '1px !important'
           }
-        })
+        }
       }
     }
   }

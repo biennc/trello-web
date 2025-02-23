@@ -79,10 +79,15 @@ const BoardBar = () => {
         <AvatarGroup
           max={4}
           sx={{
+            gap: '10px',
             '& MuiAvatar-root': {
               width: 34,
               height: 34,
-              fontSize: 16
+              fontSize: 16,
+              cursor: 'pointer',
+              color: 'white',
+              border: 'none',
+              '&:first-of-type': { bgcolor: '#a4b0de' }
             }
           }}>
           <Avatar alt='Remy Sharp' src='/static/images/avatar/1.jpg' />
