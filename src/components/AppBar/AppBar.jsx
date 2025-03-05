@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box'
-import ModeSelect from '../ModeSelect'
+import ModeSelect from '../ModeSelect/ModeSelect'
 import AppIcon from '@mui/icons-material/Apps'
 import { ReactComponent as trelloIcon } from '~/assets/trello.svg'
 import SvgIcon from '@mui/material/SvgIcon'
@@ -21,7 +21,6 @@ import SearchIcon from '@mui/icons-material/Search'
 import CloseIcon from '@mui/icons-material/Close'
 import Profiles from './Menus/Profiles'
 import LibraryAddIcon from '@mui/icons-material/LibraryAdd'
-import theme from '../../theme'
 import { useState } from 'react'
 
 const AppBar = () => {
@@ -92,14 +91,16 @@ const AppBar = () => {
               </InputAdornment>
             ),
             endAdornment: (
-              <CloseIcon
-                fontSize='small'
-                sx={{
-                  color: searchValue ? 'white' : 'transparent',
-                  cursor: 'pointer'
-                }}
-                onClick={() => setSearchValue('')}
-              />
+              <InputAdornment position='end'>
+                <CloseIcon
+                  fontSize='small'
+                  sx={{
+                    color: searchValue ? 'white' : 'transparent',
+                    cursor: 'pointer'
+                  }}
+                  onClick={() => setSearchValue('')}
+                />
+              </InputAdornment>
             )
           }}
           sx={{

@@ -5,12 +5,16 @@ const BOARD_BAR_HEIGHT = 60
 const BOARD_CONTENT = `calc(100vh - ${parseInt(APP_BAR_HEIGHT)}px - ${parseInt(
   BOARD_BAR_HEIGHT
 )}px)`
+const COLUMN_HEADER_HEIGHT = '50px'
+const COLUMN_FOOTER_HEIGHT = '56px'
 // Create a theme instance.
 const theme = extendTheme({
   trello: {
     appBarHeight: APP_BAR_HEIGHT,
     boardBarHeight: BOARD_BAR_HEIGHT,
-    boardContentHeight: BOARD_CONTENT
+    boardContentHeight: BOARD_CONTENT,
+    columnHeaderHeight: COLUMN_HEADER_HEIGHT,
+    columnFooterheight: COLUMN_FOOTER_HEIGHT
   },
   colorSchemes: {
     light: {},
